@@ -13,7 +13,8 @@ namespace my_books.Data.DTOs
         public DateTime? DateRead { get; set; }
         public int? Rating { get; set; }
         public string Genre { get; set; }
-        public string Author { get; set; }
         public string CoverUrl { get; set; }
+        public int PublisherId { get; set; }
+        public List<int> AuthorsId { get; set; }
     }
 }

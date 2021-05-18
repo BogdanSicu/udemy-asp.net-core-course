@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using my_books.Data;
 using my_books.Data.Services;
+using my_books.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace my_books
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            ConnectionString = Configuration.GetConnectionString("DefaultConnectionString");
+            ConnectionString = Configuration.GetConnectionString("Testing");
         }
 
         public IConfiguration Configuration { get; }
@@ -38,6 +39,8 @@ namespace my_books
             //Configure DBContext with SQL
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
             services.AddTransient<BooksService>();
+            services.AddTransient<PublisherService>();
+            services.AddTransient<AuthorService>();
 
             services.AddSwaggerGen(c =>
             {
@@ -66,7 +69,7 @@ namespace my_books
                 endpoints.MapControllers();
             });
 
-            TestBookData.Seed(app);
+            //TestBookData.Seed(app);
         }
     }
 }

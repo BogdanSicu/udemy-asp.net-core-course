@@ -22,9 +22,9 @@ namespace my_books.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddBook([FromBody] BookDTO bookDTO)
+        public IActionResult AddBookWithAuthors([FromBody] BookDTO bookDTO)
         {
-            _booksService.AddBook(bookDTO);
+            _booksService.AddBookWithAuthors(bookDTO);
             return Ok();
         }
 

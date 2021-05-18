@@ -25,7 +25,6 @@ namespace my_books.Data
                         DateRead = DateTime.Now.AddDays(-10),
                         Rating = 4,
                         Genre = "Actiune",
-                        Author = "George Lucas",
                         CoverUrl = "https....",
                         DateAdded = DateTime.Now
                     },
@@ -35,7 +34,6 @@ namespace my_books.Data
                         Description = "Description",
                         isRead = false,
                         Genre = "Istoric",
-                        Author = "Nush",
                         CoverUrl = "https....",
                         DateAdded = DateTime.Now
                     });
